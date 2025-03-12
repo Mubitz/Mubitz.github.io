@@ -1,0 +1,594 @@
+/* Reset dan Global */
+body,
+h1,
+p,
+ul,
+li,
+a,
+img {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* minimal body 100vh */
+
+  font-family: "Arial", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Header Styling */
+header {
+  background-color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Membuat header menjadi sticky */
+  top: 0;
+  z-index: 1000;
+  /* transition: background-color 0.3s ease; Animasi background */
+}
+
+/* Efek hover pada header */
+header:hover {
+  background-color: #000; /* Background hitam saat hover */
+}
+
+header:hover nav a,
+header:hover .header-nama {
+  color: #fff; /* Warna teks putih saat hover*/
+}
+/* Saat header di-hover, ubah warna underline menjadi putih */
+header:hover nav a::after {
+  background-color: #ffffff; /* Warna underline putih */
+}
+header:hover .header-image-container {
+  background-image: url("logo2.png");
+}
+header:hover .CV {
+  border: 2px solid white;
+  text-decoration: none;
+}
+/* .logo img {
+    height: 20px; 
+    transition: filter 0.3s ease;
+} */
+.logo {
+  display: flex;
+  align-items: center; /* Align elemen secara vertical center */
+  /* tambahkan gaya lain yang dibutuhkan */
+}
+.header-nama {
+  font-size: 20px;
+  color: #000000;
+  font-weight: 780;
+  padding: 5px;
+  transition: color 0.3s ease; /* Animasi warna teks */
+}
+
+.header-image-container {
+  width: 35px;
+  height: 35px;
+  background-image: url("logo.png"); /* Gambar awal */
+  background-size: cover; /* Sesuaikan ukuran gambar */ /* Efek transisi (opsional) */
+}
+
+/* Navigasi */
+nav ul {
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: #000000;
+  font-weight: 700;
+  padding: 5px;
+  position: relative; /* Membuat pseudo-element relatif terhadap link */
+  text-decoration: none; /* Menghilangkan underline default */
+  transition: color 0.3s ease; /* Animasi warna teks */
+}
+
+nav a::after {
+  content: ""; /* Pseudo-element harus memiliki content */
+  position: absolute;
+  left: 50%; /* Mulai dari tengah */
+  bottom: -5px; /* Posisi underline */
+  width: 0; /* Awalnya tidak ada underline */
+  height: 1px; /* Ketebalan underline */
+  background-color: #000000; /* Warna underline */
+  transform: translateX(-50%); /* Pusatkan underline */
+  transition: width 0.5s ease; /* Animasi lebar underline */
+}
+
+nav a:hover::after,
+nav a.active::after {
+  /* Underline saat hover atau aktif */
+  width: 100%; /* Underline mengisi penuh lebar link */
+}
+
+/* nav a.active {
+  color: #000000; 
+} */
+
+.content-div {
+  display: none;
+}
+
+.active-content {
+  display: block;
+}
+
+/* Aturan khusus untuk class CV */
+nav a.CV {
+  font-weight: 700;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Animasi warna teks dan background */
+  border: 2px solid black; /* Border untuk CV */
+}
+
+nav a.CV:hover {
+  background-color: #fff; /* Warna background saat hover */
+  color: #000; /* Warna teks saat hover */
+}
+
+/* Nonaktifkan underline untuk link dengan class CV */
+nav a.CV::after {
+  display: none; /* Menyembunyikan pseudo-element */
+}
+
+nav a.CV:hover::after,
+nav a.CV.active::after {
+  display: none; /* Pastikan underline tidak muncul saat hover atau aktif */
+}
+
+/* Menu Toggle (Mobile) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle span:last-child {
+  margin-bottom: 0;
+}
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.beranda-container {
+  width: 100%;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.beranda-foto {
+  width: 50%;
+  height: 430px;
+  overflow: hidden;
+}
+.beranda-foto img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  /* object-position: left; */
+  transition: transform 0.6s ease-in-out;
+}
+
+.beranda-teks {
+  display: flex; /* Mengaktifkan flexbox */
+  /* align-items: center;   */
+  flex-direction: column;
+  width: 50%; /* Lebar bagian teks 40% */
+  padding-left: 5%;
+
+  box-sizing: border-box; /* Agar padding tidak mempengaruhi lebar */
+  line-height: 1.6;
+
+  margin-top: 50px;
+}
+.beranda-teks h1 {
+  font-size: 50px;
+  margin-bottom: 1em;
+}
+
+.judul {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 30px;
+}
+.isi-beranda {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.teks-beranda {
+  display: flex; /* Mengaktifkan flexbox */
+  /* align-items: center;   */
+  flex-direction: column;
+  width: 40%; /* Lebar bagian teks 40% */
+
+  box-sizing: border-box; /* Agar padding tidak mempengaruhi lebar */
+  line-height: 1.6;
+
+  margin-top: 30px;
+}
+.teks-beranda h1 {
+  font-size: 40px;
+}
+
+.about-container {
+  width: 100%;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+}
+.about-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.about-title h1 {
+  font-size: 45px;
+}
+.about-teks {
+  margin: 0 10% 2rem 10%; /* Margin kiri dan kanan 10%, margin bawah 2rem */
+  padding: 0 10%; /* Padding kiri dan kanan 10% */
+  line-height: 1.6; /* Jarak antar baris */
+}
+
+.about-teks p {
+  margin-bottom: 1.5rem; /* Jarak antar paragraf */
+}
+
+.portofolio-container {
+  width: 100%;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+}
+.portofolio-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.portofolio-title h1 {
+  font-size: 45px;
+}
+
+.portofolio-project {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  display: flex; /* Use flexbox */
+  justify-content: space-around; /* Distribute evenly */
+  flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+}
+
+/* .portofolio-card {
+  width: 400px; 
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden; 
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  transition: box-shadow 0.3s ease;
+}
+
+.portofolio-card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+} */
+
+.portofolio-card {
+  position: relative;
+  width: 400px; /* Sesuaikan lebar sesuai kebutuhan */
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Pastikan gambar tidak meluap dari sudut yang membulat */
+  margin: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.portofolio-card::before {
+  content: "";
+  position: absolute;
+  top: var(--y); /* Posisi vertikal berdasarkan cursor */
+  left: var(--x); /* Posisi horizontal berdasarkan cursor */
+  width: 0;
+  height: 0;
+  background: rgba(0, 0, 0, 0.08); /* Warna overlay */
+  border-radius: 50%; /* Membuat efek lingkaran */
+  transform: translate(-50%, -50%) scale(0); /* Awalnya kecil dan tidak terlihat */
+  transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+  pointer-events: none; /* Agar tidak mengganggu interaksi dengan elemen lain */
+}
+
+.portofolio-card:hover::before {
+  width: 800px; /* Ukuran overlay yang besar */
+  height: 800px; /* Ukuran overlay yang besar */
+  transform: translate(-50%, -50%) scale(1); /* Membesar saat di-hover */
+}
+
+.portofolio-card:hover {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.portofolio-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portofolio-image {
+  width: 100%; /* Lebar gambar mengisi container */
+  height: auto; /* Tinggi diatur otomatis untuk menjaga rasio aspek */
+  object-fit: contain; /* Penting: Mengatur bagaimana gambar mengisi container */
+  object-position: center; /* Opsional: Memposisikan gambar di tengah container */
+}
+
+.portofolio-teks {
+  padding: 15px;
+}
+
+.project-name {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.project-deskripsi {
+  font-size: 0.8em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Add the yellow top border */
+/* .portofolio-image::after {
+  content: "";
+  position: relative;
+  display: block;
+  height: 8px;
+  width: 100%;
+  background-color: yellow;
+} */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center; /* Align elemen secara vertical center */
+  /* tambahkan gaya lain yang dibutuhkan */
+}
+
+#jumping-logo {
+  width: 35px;
+  height: 35px;
+  position: relative;
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(0, 0);
+    animation-timing-function: ease-in-out;
+  }
+
+  50% {
+    transform: translate(0, -20%);
+    animation-timing-function: ease-in-out;
+  }
+
+  100% {
+    transform: translate(0, 2%);
+    animation-timing-function: ease-in-out;
+  }
+}
+.footer-nama {
+  font-size: 20px;
+  font-weight: 780;
+  padding: 5px;
+  transition: color 0.3s ease; /* Animasi warna teks */
+}
+
+.footer-right .social-icons a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+.footer-right .social-icons a:hover {
+  opacity: 0.7;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  header {
+    background-color: #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Style header ketika nav punya class active */
+  header.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  header:hover .CV {
+    border: none;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header-image-container {
+    background-image: url("logo2.png");
+  }
+
+  nav a::after {
+    display: none; /* Menyembunyikan pseudo-element */
+  }
+
+  nav a:hover::after,
+  nav a.active::after {
+    display: none; /* Pastikan underline tidak muncul saat hover atau aktif */
+  }
+  nav a:hover {
+    text-decoration: initial;
+    text-underline-offset: inherit;
+    text-decoration-thickness: initial; /* Underline saat hover */
+  }
+
+  nav {
+    width: 100%;
+    display: none;
+    margin-top: 20px;
+  }
+  nav a,
+  .header-nama {
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px;
+  }
+
+  nav.active {
+    display: block;
+    color: #ffffff;
+  }
+
+  nav ul {
+    flex-direction: column;
+    /* text-align: center; */
+  }
+
+  nav li {
+    margin: 10px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  nav ul .li-cv {
+    display: flex;
+    justify-content: center;
+
+    border: 3px solid rgba(255, 255, 255, 1);
+  }
+  nav ul .rmv-padding {
+    /* border-bottom: 0px; */
+    margin-bottom: -10px;
+  }
+  nav a.CV {
+    padding-top: 25px;
+    border: none;
+  }
+  nav a.CV:hover {
+    background-color: inherit; /* Warna background saat hover */
+    color: inherit; /* Warna teks saat hover */
+  }
+
+  /* nav a.active {
+    color: #ffffff;
+  } */
+
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+  }
+
+  main {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .beranda-container {
+    flex-direction: column;
+    flex-direction: none;
+  }
+  .beranda-foto {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-top: 5%;
+  }
+  .beranda-foto img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    /* object-position: left; */
+  }
+  .beranda-teks {
+    display: flex; /* Mengaktifkan flexbox */
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    box-sizing: border-box; /* Agar padding tidak mempengaruhi lebar */
+    line-height: 1.8;
+
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 30px;
+
+    text-align: justify;
+  }
+  .beranda-teks h1 {
+    font-size: 30px;
+    margin-bottom: 1em;
+    /* font-weight: 700; */
+  }
+}
+
+/* Style tambahan untuk menu toggle aktif */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}

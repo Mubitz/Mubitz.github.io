@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUBITZ</title>
+    <link rel="icon" href="Logo.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <div class="header-image-container"></div>
+          <div class="header-nama">MUBITZ</div>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#beranda" class="nav-link active" data-target="beranda"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a href="#about" class="nav-link" data-target="about"
+                >Tentang Saya</a
+              >
+            </li>
+            <li class="rmv-padding">
+              <a href="#portofolio" class="nav-link" data-target="portofolio"
+                >Portofolio</a
+              >
+            </li>
+            <li class="li-cv">
+              <a href="CV_MuhamadTerbitZikri.pdf" class="CV">CV</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Konten utama halaman Anda disini -->
+      <div id="beranda" class="content-div beranda">
+        <div class="beranda-container">
+          <div class="beranda-foto">
+            <img id="beranda-img" src="logo.png" alt="Logo" />
+          </div>
+          <div class="beranda-teks">
+            <h1>Muhamad Terbit Zikri</h1>
+            <p>
+              Saya Sarjana Teknik Informatika. Saya menguasai beberapa bahasa
+              pemrograman seperti Python, JavaScript, PHP, Java. Saya juga
+              memiliki minat dalam bidang pengolahan data.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="about" class="content-div about">
+        <div class="about-container">
+          <div class="about-title"><h1>Saya</h1></div>
+          <div class="about-teks">
+            <p>
+              Saya Muhammad Terbit Zikri, seorang lulusan Sarjana Teknik dari
+              Universitas Ibn Khaldun Bogor dengan IPK 3,74. Selama masa studi,
+              saya mengembangkan minat dan keahlian di bidang teknologi,
+              khususnya dalam pengembangan perangkat lunak dan machine learning.
+              Tugas akhir saya berfokus pada perbandingan dua metode machine
+              learning, yaitu Long Short-Term Memory (LSTM) dan Double Random
+              Forest, untuk memprediksi harga penutupan saham. Proyek ini tidak
+              hanya memperdalam pemahaman saya tentang algoritma machine
+              learning, tetapi juga melatih kemampuan analisis data dan
+              pemecahan masalah.
+            </p>
+            <p>
+              Selain akademis, saya juga memiliki pengalaman praktis melalui
+              magang di BAPPEDALITBANG Kabupaten Bogor, di mana saya terlibat
+              dalam pengembangan website pendaftaran inovasi. Tugas saya sebagai
+              backend developer dan manajer database meliputi pembuatan sistem
+              yang efisien untuk memproses data dan memastikan informasi
+              tersimpan dengan baik. Pengalaman ini mengasah kemampuan teknis
+              saya dalam pemrograman menggunakan bahasa seperti Java,
+              JavaScript, Python, dan PHP, serta memperkuat pemahaman saya
+              tentang manajemen database.
+            </p>
+            <p>
+              Saya juga membuat beberpa projek sendiri, seperti membangun model
+              machine learning untuk mengklasifikasikan komentar terkait
+              perjudian di YouTube. Proyek ini bertujuan untuk membantu
+              mengidentifikasi dan menyaring konten yang tidak pantas,
+              menunjukkan kemampuan saya dalam menerapkan teknologi untuk
+              menyelesaikan masalah sosial. Saya adalah pribadi yang selalu
+              ingin belajar hal baru dan menantang diri sendiri untuk terus
+              berkembang.
+            </p>
+            <p>
+              Saya percaya bahwa teknologi dapat menjadi alat yang powerful
+              untuk menciptakan solusi inovatif, dan saya berkomitmen untuk
+              berkontribusi dalam proyek-proyek yang memiliki dampak positif
+              bagi masyarakat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="portofolio" class="content-div portofolio">
+        <div class="portofolio-container">
+          <div class="portofolio-title">
+            <h1>Portofolio</h1>
+            <!-- <p class="related-articles">Related Articles</p> -->
+          </div>
+
+          <div class="portofolio-project">
+            <div class="portofolio-card">
+              <img
+                src="model_judol.png"
+                alt="Article Image"
+                class="portofolio-image"
+              />
+              <div class="portofolio-teks">
+                <div class="project-name">Mendeteksi Komen Judol</div>
+                <p class="project-deskripsi">
+                  Mengambil data komen dari api youtube lalu disaring oleh
+                  model. Ada dua versi yang dibuat, menggunakan node js dan
+                  menggunakan html saja
+                </p>
+              </div>
+            </div>
+
+            <div class="portofolio-card">
+              <img
+                src="LSTM.png"
+                alt="Article Image"
+                class="portofolio-image"
+              />
+              <div class="portofolio-teks">
+                <div class="project-name">Prediksi Saham</div>
+                <p class="project-deskripsi">
+                  Memprediksi harga saham t + 1 Menggunakan model LSTM dan
+                  Double Random Forest
+                </p>
+              </div>
+            </div>
+
+            <div class="portofolio-card">
+              <img
+                src="web bapeda.png"
+                alt="Article Image"
+                class="portofolio-image"
+              />
+              <div class="portofolio-teks">
+                <div class="project-name">Website GoInnovator</div>
+                <p class="project-deskripsi">
+                  Website untuk pendaftaran inovasi menggunakan framework
+                  CodeIgniter 3
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img id="jumping-logo" src="logo2.png" alt="Mubitz logo" />
+        </div>
+        <div class="footer-right">
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <!-- <button class="back-to-top" type="button">
+          <i class="fa-solid fa-chevron-up"></i>
+        </button> -->
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll(".portofolio-card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left; // Posisi horizontal cursor relatif terhadap card
+          const y = e.clientY - rect.top; // Posisi vertikal cursor relatif terhadap card
+          card.style.setProperty("--x", `${x}px`); // Gunakan x untuk --x
+          card.style.setProperty("--y", `${y}px`); // Gunakan y untuk --y
+        });
+      });
+      const navLinks = document.querySelectorAll(".nav-link");
+      const contentDivs = document.querySelectorAll(".content-div");
+
+      function showContent(targetId) {
+        console.log(targetId);
+        // Deactivate all nav links and content divs
+        navLinks.forEach((link) => link.classList.remove("active"));
+        contentDivs.forEach((div) => div.classList.remove("active-content"));
+
+        // Activate clicked nav link
+        const clickedLink = document.querySelector(
+          `[data-target="${targetId}"]`
+        );
+        if (clickedLink) {
+          clickedLink.classList.add("active");
+        }
+
+        // Activate target content div
+        const targetDiv = document.getElementById(targetId);
+        if (targetDiv) {
+          targetDiv.classList.add("active-content");
+        }
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          const target = this.getAttribute("data-target");
+          showContent(target);
+        });
+      });
+
+      // Activate the initially selected tab when the page is first loaded
+      const initialActiveNavLink = document.querySelector(".nav-link.active");
+      if (initialActiveNavLink) {
+        showContent(initialActiveNavLink.getAttribute("data-target"));
+      }
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const header = document.querySelector("header");
+      const nav = document.querySelector("nav");
+      let scrollPosition = 0;
+      let menuToggleCount = 0;
+
+      menuToggle.addEventListener("click", () => {
+        if (menuToggleCount == 0) {
+          console.log("Posisi Scroll Sebelum Set:", window.scrollY);
+          scrollPosition = window.scrollY;
+          menuToggleCount += 1;
+        } else {
+          menuToggleCount -= 1;
+        }
+        header.classList.toggle("active");
+        nav.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+
+        if (menuToggleCount == 0) {
+          console.log("scroll:", scrollPosition);
+
+          setTimeout(() => {
+            window.scrollTo(0, scrollPosition);
+          }, 0);
+        }
+      });
+
+      const beranda_image = document.getElementById("beranda-img");
+      beranda_image.addEventListener("click", function () {
+        const randomRotation = Math.floor(Math.random() * 360);
+        const direction = Math.random() < 0.5 ? 1 : -1;
+        beranda_image.style.transform = `rotate(${
+          randomRotation * direction
+        }deg)`;
+      });
+
+      const logo = document.getElementById("jumping-logo");
+      const jumpInterval = 1.4; // in seconds
+
+      function startJumpAnimation() {
+        logo.style.animation = `jump 1s linear`;
+        setTimeout(() => {
+          logo.style.animation = "none";
+        }, 700); // 1 second for animation
+      }
+
+      setInterval(startJumpAnimation, jumpInterval * 1000);
+    </script>
+  </body>
+</html>
